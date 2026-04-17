@@ -1,4 +1,4 @@
-//Adding an admin object to access the viewer analytics page
+//Adding an admin object to access the DASHBOARD page
 const admin ={
     trn:"123-456-789",
     password:"PASSWORD123",
@@ -21,7 +21,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
      //adding functionality to login to redirect to the viewer analytics page
     if (trn === admin.trn && password === admin.password) {
         alert("Admin Login successful!");
-        window.location.href = "ViewerAnalytics.html";
+        window.location.href = "dashbaord.html";
         return;
     }
 
