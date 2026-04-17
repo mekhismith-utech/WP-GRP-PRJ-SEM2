@@ -21,7 +21,7 @@ document.getElementById("login-form").addEventListener("submit", function(e) {
      //adding functionality to login to redirect to the viewer analytics page
     if (trn === admin.trn && password === admin.password) {
         alert("Admin Login successful!");
-        window.location.href = "dashbaord.html";
+        window.location.href = "dashboard.html";
         return;
     }
 
