@@ -1,0 +1,117 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body class="register">
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>  
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="DemonCoreGallery.html">Gallery</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="DemonCoreCommissions.html">Commissions</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html">Login</a></li>
+                <li><a href="DemonCoreRegister.html" class="active">Register</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h2 class="page-title">Create an Account</h2>
+        
+        <div class="auth-grid" style="max-width: 900px;">
+            <div class="card form-container" style="max-width: 100%; margin: 0;">
+                <h2 style="margin-bottom: 2rem; color: var(--accent-color); font-weight: 800; text-transform: uppercase;">User Information</h2>
+
+            <!-- Q1: Registration form - stores user data as object in RegistrationData array in localStorage -->
+            <form id="register-form">
+
+    <div style="display: flex; gap: 1rem;">
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">First Name</label>
+        <input type="text" id="fname" class="form-control" required>
+    </div>
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Last Name</label>
+        <input type="text" id="lname" class="form-control" required>
+    </div>
+</div>
+
+<div style="display: flex; gap: 1rem;">
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">DATE OF BIRTH</label>
+        <input type="date" id="dob" class="form-control" required>
+    </div>
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Gender</label>
+        <select id="gender" class="form-control" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+    </div>
+</div>
+
+<div style="display: flex; gap: 1rem;">
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Phone Number</label>
+        <input type="text" id="phone" class="form-control" required>
+    </div>
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Email</label>
+        <input type="email" id="email" class="form-control" required>
+    </div>
+</div>
+
+<div style="display: flex; gap: 1rem;">
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">TRN</label>
+        <input type="text" id="trn" class="form-control" placeholder="TRN (000-000-000)" required>
+    </div>
+    <div class="form-group" style="flex: 1;">
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password (min 8 chars)" required>
+    </div>
+</div>
+
+<!-- reg-error div is required by register.js-->
+<div id="reg-error" style="color: #ef4444; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;"></div>
+
+<div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+    <!-- Register saves data; Cancel clears the form -->
+    <button type="submit" class="btn form-submit" style="flex: 2; border-radius: 8px;">Register</button>
+    <button type="reset" class="btn form-submit" onclick="document.getElementById('reg-error').innerText='';" style="flex: 1; border-radius: 8px; border-color: var(--text-main); color: var(--text-main);">Cancel</button>
+</div>
+
+</form>
+<p style="margin-top: 1rem;">Already registered? <a href="index.html" style="color: var(--accent-color);">Login</a></p>
+</div>
+</div>
+</main>
+
+<footer>
+    <p>Demon Core Animations</p>
+</footer>
+
+<script src="DemonCoreAuth.js"></script>
+<script src="register.js"></script>
+<script src="DemonCoreLogout.js"></script>
+
+</body>
+</html>

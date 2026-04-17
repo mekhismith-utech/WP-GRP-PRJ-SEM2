@@ -1,0 +1,56 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body>
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>  
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="DemonCoreGallery.html">Gallery</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="DemonCoreCommissions.html">Commissions</a></li>
+                <li><a href="cart.html" class="active">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 class="page-title">Your Shopping Cart</h2>
+        
+        <div class="cart-container">
+            <div id="cart-items">
+                </div>
+
+            <div id="cart-summary" class="cart-summary">
+                </div>
+
+            <div class="cart-buttons">
+                <button class="btn" style="border-color: #ef4444; color: #ef4444;" onclick="clearCart()">Clear All</button>
+                <button class="btn form-submit" onclick="goCheckout()">Proceed to Checkout</button>
+                <button class="btn" onclick="closeCart()">Continue Shopping</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Demon Core Animations</p>
+    </footer>
+    <script src="cart.js"></script>
+    
+</body>
+</html>

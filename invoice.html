@@ -1,0 +1,109 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body>
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">Invoice</h2>
+
+        <!--Invoice display - populated by invoice.js from lastInvoice in localStorage -->
+        <div class="card form-container" style="max-width: 650px; margin: 0 auto;" id="invoice-card">
+            <div style="text-align: center; border-bottom: 2px dashed var(--border-color); padding-bottom: 1.5rem; margin-bottom: 1.5rem;">
+                <h2 style="color: var(--accent-color); font-weight: 800; font-size: 1.5rem;">OFFICIAL INVOICE</h2>
+                <p id="inv-company" style="font-weight: 600; color: var(--text-light); font-size: 1.1rem;"></p>
+                <p id="inv-number" style="font-family: monospace; color: #94a3b8; font-size: 0.9rem;"></p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; gap: 1rem; flex-wrap: wrap;">
+                <div>
+                    <p style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 0.25rem;">BILLED TO</p>
+                    <p id="inv-name" style="font-weight: 600; color: var(--text-light);"></p>
+                    <p id="inv-email" style="color: var(--text-main); font-size: 0.9rem;"></p>
+                    <p id="inv-address" style="color: var(--text-main); font-size: 0.9rem;"></p>
+                </div>
+                <div style="text-align: right;">
+                    <p style="font-size: 0.8rem; color: var(--text-main); margin-bottom: 0.25rem;">INVOICE DATE</p>
+                    <p id="inv-date" style="font-weight: 600; color: var(--text-light);"></p>
+                    <p style="font-size: 0.8rem; color: var(--text-main); margin: 0.5rem 0 0.25rem;">TRN</p>
+                    <p id="inv-trn" style="font-weight: 600; color: var(--text-light); font-family: monospace;"></p>
+                </div>
+            </div>
+
+            <!--Line items table with name, quantity, price, discount -->
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9rem;">
+                <thead>
+                    <tr style="border-bottom: 2px solid var(--border-color);">
+                        <th style="text-align: left; padding: 0.5rem 0; color: var(--text-main); font-weight: 600;">Item</th>
+                        <th style="text-align: center; padding: 0.5rem 0; color: var(--text-main); font-weight: 600;">Qty</th>
+                        <th style="text-align: right; padding: 0.5rem 0; color: var(--text-main); font-weight: 600;">Price</th>
+                        <th style="text-align: right; padding: 0.5rem 0; color: var(--text-main); font-weight: 600;">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="inv-items"></tbody>
+            </table>
+
+            <!--Subtotal, discount, tax, and total -->
+            <div style="border-top: 2px dashed var(--border-color); padding-top: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Subtotal</span>
+                    <span id="inv-subtotal" style="font-weight: 600;"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Discount</span>
+                    <span id="inv-discount" style="font-weight: 600; color: #10b981;"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Tax (15% GCT)</span>
+                    <span id="inv-tax" style="font-weight: 600;"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 1.3rem;">
+                    <span style="font-weight: 800; color: var(--text-light);">TOTAL</span>
+                    <span id="inv-total" style="font-weight: 800; color: var(--accent-color);"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                    <span style="color: #10b981; font-weight: 600;">Status</span>
+                    <span style="color: #10b981; font-weight: 800;">PAID</span>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button class="btn form-submit" onclick="window.print()" style="border-radius: 8px;">Print Invoice</button>
+                <a href="product.html" class="btn" style="border-radius: 8px;">Continue Shopping</a>
+                <a href="dashboard.html" class="btn" style="border-radius: 8px;">View Dashboard</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demon Core Animations</p>
+    </footer>
+    <script src="DemonCoreAuth.js"></script>
+    <script src="invoice.js"></script>
+    <script src="DemonCoreLogout.js"></script>
+</body>
+</html>

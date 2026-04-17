@@ -1,0 +1,47 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body class="shop">
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="DemonCoreGallery.html">Gallery</a></li>
+                <li><a href="product.html" class="active">Shop</a></li>
+                <li><a href="DemonCoreCommissions.html">Commissions</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html" id="login-link">Login</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">Digital Assets</h2>
+        <!-- Product grid dynamically populated by linked javascript using the AllProducts array -->
+        <div class="grid shop-grid" id="product-grid">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Demon Core Animations</p>
+        <a href="DemonCoreCommissions.html">Set up your first commissioned piece</a>
+    </footer>
+    <script src="DemonCoreAuth.js"></script>
+    <script src="products.js"></script>
+    <script src="DemonCoreLogout.js"></script>
+</body>
+</html>

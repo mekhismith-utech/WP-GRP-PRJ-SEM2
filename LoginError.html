@@ -1,0 +1,52 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Failed - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+
+<body>
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>  
+        </a>
+    </header>
+
+    <main>
+      
+        <h2 class="page-title">Login Failed</h2>
+
+        <div class="card form-container" style="text-align: center; max-width: 500px; margin: 0 auto; padding: 3rem;">
+            <p style="color: var(--text-main); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                The credentials provided do not match our records. Please ensure your TRN and password are correct.
+            </p>
+            
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="index.html" class="btn form-submit">Try Again</a>
+                <a href="register.html" class="btn" style="border-color: var(--text-main); color: var(--text-main);">Create an Account</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="margin-top: auto;">
+        <p>Demon Core Animations</p>
+    </footer>
+
+    <script src="DemonCoreAuth.js"></script>
+    <script>
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 50000);
+        <!-- automatically send the user back to the login page after 50 seconds -->
+    </script>
+</body>
+</html>

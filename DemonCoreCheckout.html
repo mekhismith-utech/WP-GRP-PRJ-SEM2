@@ -1,0 +1,113 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body class="checkout">
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="DemonCoreGallery.html">Gallery</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="DemonCoreCommissions.html">Commissions</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="DemonCoreCheckout.html" class="active">Checkout</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <h2 class="page-title">Secure Checkout</h2>
+
+    <div class="auth-grid" style="max-width: 1200px; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));">
+
+        <!-- Checkout billing and shipping details form -->
+        <div class="card form-container" style="margin: 0;">
+            <h2 style="margin-bottom: 2rem; color: var(--accent-color); font-weight: 800; text-transform: uppercase;">Billing Details</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Full Name</label>
+                    <input type="text" id="custName" class="form-control" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Email Address</label>
+                    <input type="email" id="custEmail" class="form-control" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Street Address</label>
+                    <input type="text" id="custAddress" class="form-control" name="address" required>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">City</label>
+                        <input type="text" id="custCity" class="form-control" name="city" required>
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">ZIP / Parish</label>
+                        <input type="text" id="custZip" class="form-control" name="zip" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label style="display: block; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Amount Being Paid ($)</label>
+                    <input type="number" id="amountPaid" class="form-control" name="amountPaid" min="0" step="0.01" required>
+                </div>
+
+                <div id="checkout-error" style="color: #ef4444; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;"></div>
+
+                <!--Confirm triggers invoice generation; Cancel goes back to cart -->
+                <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                    <button type="button" class="btn form-submit" id="confirmBtn" style="flex: 2; border-radius: 8px;" onclick="confirmCheckout()">Confirm Order</button>
+                    <button type="button" class="btn form-submit" style="flex: 1; border-radius: 8px; border-color: var(--text-main); color: var(--text-main);" onclick="window.location.href='cart.html'">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Order summary pulled dynamically from localStorage cart -->
+        <div class="card" style="margin: 0; align-self: start;">
+            <h2 style="margin-bottom: 2rem; color: var(--accent-color); font-weight: 800; text-transform: uppercase;">Order Summary</h2>
+            <div id="order-summary-items"></div>
+            <div style="border-top: 2px dashed var(--border-color); padding-top: 1rem; margin-top: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Subtotal</span>
+                    <span id="summary-subtotal" style="font-weight: 600;">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Discount (10% over $100)</span>
+                    <span id="summary-discount" style="font-weight: 600; color: #10b981;">-$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span style="color: var(--text-main);">Tax (15% GCT)</span>
+                    <span id="summary-tax" style="font-weight: 600;">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 1rem; font-size: 1.2rem;">
+                    <span style="font-weight: 800; color: var(--text-light);">Total</span>
+                    <span id="summary-total" style="font-weight: 800; color: var(--accent-color);">$0.00</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demon Core Animations</p>
+    </footer>
+    <script src="DemonCoreAuth.js"></script>
+    <script src="checkout.js"></script>
+    <script src="DemonCoreLogout.js"></script>
+</body>
+</html>

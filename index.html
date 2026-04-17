@@ -1,0 +1,79 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+</head>
+<body>
+<header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>  
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="DemonCoreGallery.html">Gallery</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="DemonCoreCommissions.html">Commissions</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="index.html" class="active">Login</a></li>
+                <li><a href="DemonCoreRegister.html">Register</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">Welcome Back!</h2>
+        
+        <div class="auth-grid">
+            <div class="card form-container" style="max-width: 500px; margin: 0 auto;">
+                <h2 style="margin-bottom: 2rem; color: var(--accent-color); font-weight: 800;">Please enter your login details</h2>
+                
+                <!-- Login Form - validates TRN and password against RegistrationData in localStorage -->
+                <form id="login-form">
+                    <div class="form-group">
+                        <label style="display: block; text-align: left; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">TRN Number</label>
+                        <input type="text" id="trn" class="form-control" placeholder="000-000-000" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: block; text-align: left; margin-bottom: 0.5rem; font-size: 0.85rem; color: var(--text-main); font-weight: 600;">Password</label>
+                        <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+
+                    <div id="login-error" style="color: #ef4444; font-size: 0.9rem; margin-bottom: 1rem; font-weight: 600;"></div>
+
+                    <!-- Login button submits the form; Cancel button clears it -->
+                    <div style="display: flex; gap: 1rem;">
+                        <button type="submit" class="btn form-submit" style="flex: 2; border-radius: 8px;">Sign In</button>
+                        <button type="button" class="btn form-submit" onclick="document.getElementById('login-form').reset(); document.getElementById('login-error').innerText='';" style="flex: 1; border-radius: 8px; border-color: var(--text-main); color: var(--text-main);">Cancel</button>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; font-size: 0.9rem;">
+                        <a href="#" onclick="resetPassword()" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">Forgot Password?</a>
+                        <span style="color: var(--text-main);">New here? <a href="DemonCoreRegister.html" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">Register</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Demon Core Animations</p>
+    </footer>
+
+<script src="DemonCoreAuth.js"></script>
+<script src="login.js"></script>
+<script src="DemonCoreLogout.js"></script>
+
+</body>
+</html>

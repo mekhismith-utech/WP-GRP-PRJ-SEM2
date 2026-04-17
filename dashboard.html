@@ -1,0 +1,168 @@
+<!-- 
+Group Members:
+Tarique Levy    2401827
+Traciana Thomas 2402168
+Mekhi Smith     2304381 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Demon Core Animations</title>
+    <link rel="stylesheet" href="DemonCoreAnimation.css">
+    <style>
+        .dash-section {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .dash-section h3 {
+            color: var(--accent-color);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .bar-label {
+            font-size: 0.85rem;
+            color: var(--text-main);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+        .bar-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .bar-track {
+            flex: 1;
+            background: var(--border-color);
+            border-radius: 4px;
+            height: 24px;
+            overflow: hidden;
+        }
+        .bar-fill {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+        .bar-count {
+            font-weight: 800;
+            color: var(--text-light);
+            min-width: 30px;
+            text-align: right;
+        }
+        .invoice-row {
+            background: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .invoice-row strong { color: var(--accent-color); }
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .search-bar input {
+            flex: 1;
+        }
+        
+        @media (max-width: 600px) {
+            .bar-row { flex-direction: column; align-items: flex-start; }
+            .bar-track { width: 100%; }
+            .search-bar { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="DemonCoreAnimations.html" class="header-brand">
+            <img class="logo-img" src="logo.png" alt="Demon Core Animations Logo">
+            <h1>Demon Core Animations</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="DemonCoreAnimations.html">Home</a></li>
+                <li><a href="product.html">Shop</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li id="logout-item" style="display: none;"><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 class="page-title">Analytics Dashboard</h2>
+
+        <div class="dash-section">
+            <h3>Site Traffic &amp; Engagement</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Site Visits</span>
+                    <span class="stat-value" id="Visits">0</span>
+                </div>
+            <div class="stat-card">
+                <span class="stat-label">Login Button Clicks</span>
+                <span class="stat-value" id="login-clicks">0</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Register Button Clicks</span>
+                <span class="stat-value" id="register-clicks">0</span>
+            </div>
+        </div>
+
+        <!--ShowUserFrequency(), shows the gender frequency -->
+        <div class="dash-section">
+            <h3>User Frequency by Gender</h3>
+            <div id="gender-chart">
+                <p style="color: var(--text-main);">Loading...</p>
+            </div>
+        </div>
+
+        <!--ShowUserFrequency(), shows the age group frequency -->
+        <div class="dash-section">
+            <h3>User Frequency by Age Group</h3>
+            <div id="age-chart">
+                <p style="color: var(--text-main);">Loading...</p>
+            </div>
+        </div>
+
+        <!--ShowInvoices() - All invoices with TRN search-->
+        <div class="dash-section">
+            <h3>All Invoices</h3>
+            <!-- Search by TRN -->
+            <div class="search-bar">
+                <input type="text" id="trn-search" class="form-control" placeholder="Search by TRN (e.g. 123-456-789)">
+                <button class="btn" onclick="searchInvoicesByTRN()">Search</button>
+                <button class="btn" style="border-color: var(--text-main); color: var(--text-main);" onclick="ShowInvoices()">Show All</button>
+            </div>
+            <div id="invoice-list">
+                <p style="color: var(--text-main);">Loading...</p>
+            </div>
+        </div>
+
+        <!--GetUserInvoices(), for the currently logged-in user-->
+        <div class="dash-section">
+            <h3>My Invoices</h3>
+            <div id="my-invoice-list">
+                <p style="color: var(--text-main);">Loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Demon Core Animations</p>
+    </footer>
+    <script src="DemonCoreAuth.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="DemonCoreLogout.js"></script>
+</body>
+</html>
