@@ -5,7 +5,7 @@
 |-----------------|------------|
 | Mekhi Smith     | 2304381    |
 | Tarique Levy    | 2401827    |
-| Traciana Thomas | 2402168    |
+| Traciana Thompson| 2402168    |
 
 
 ---
