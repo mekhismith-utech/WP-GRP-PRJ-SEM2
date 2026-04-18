@@ -65,7 +65,6 @@
 | `checkout.js`       | Checkout form, order summary, invoice generation               |
 | `invoice.js`        | Invoice page population from localStorage                      |
 | `dashboard.js`      | ShowUserFrequency(), ShowInvoices(), GetUserInvoices()          |
-| `reciept.js`        | Legacy receipt logic (original checkout page)                  |
 
 ---
 
