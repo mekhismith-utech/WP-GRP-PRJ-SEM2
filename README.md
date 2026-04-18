@@ -72,7 +72,7 @@
 
 - **HTML5** - Semantic structure
 - **CSS3** - Vanilla styling (Flexbox, Grid, CSS Variables, Media Queries)
-- **JavaScript (ES6)** - All interactivity and data logic
+- **JavaScript ** - All interactivity and data logic
 - **localStorage** - Client-side persistent data storage
 - **Google Fonts** - Outfit font family (`fonts.googleapis.com`)
 - **Wireframing Tool(figma)** - Screenshots included in `/Wireframes/` folder
